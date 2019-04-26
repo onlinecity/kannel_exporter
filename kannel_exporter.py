@@ -371,8 +371,7 @@ if __name__ == '__main__':
 
 
     # get password
-    status_password = "3AfLA8e.-ihxHM8B"
-    #status_password = get_password(args.password, args.password_file)
+    status_password = get_password(args.password, args.password_file)
 
     REGISTRY.register(KannelCollector(args.target, status_password,
                                       args.filter_smsc,
@@ -381,5 +380,3 @@ if __name__ == '__main__':
                                       args.collect_box_uptime))
 
     app = make_wsgi_app()
-    httpd = make_server('', args.port, app)
-    httpd.serve_forever()
